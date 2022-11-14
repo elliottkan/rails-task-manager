@@ -1,0 +1,10 @@
+Task: <%= @task.title %>
+<br>
+Details: <%= @task.details %>
+<br>
+<% checked = @task.completed ? 1 : 0 %>
+ <input type="checkbox" value= <%= checked %> > - Completed
+<br>
+<%= link_to "End my existence ", task_path(@task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<br>
+<%= link_to "Edit Task", edit_path(@task)%>
